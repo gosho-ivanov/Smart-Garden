@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  smartgarden:
+    build: .
+    devices:
+      - /dev/gpiochip0:/dev/gpiochip0
+      - /dev/gpiomem:/dev/gpiomem
+      - /dev/i2c-1:/dev/i2c-1
+    privileged: true
+    network_mode: host
+    restart: unless-stopped
+    environment:
+      - BLINKA_FORCEBOARD=RASPBERRY_PI_5
+    volumes:
+      - ./smartgarden.py:/app/smartgarden.py
