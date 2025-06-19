@@ -1,4 +1,4 @@
-FROM arm32v7/python:3.11-slim
+FROM python:3.11-slim
 
 # Install system dependencies
 RUN apt-get update && \

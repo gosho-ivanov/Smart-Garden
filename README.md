@@ -40,14 +40,7 @@ docker build -t smartgarden .
 ### 👉 2. Стартиране на контейнера
 
 ```bash
-docker run -d \
-  --name smartgarden \
-  --device /dev/gpiochip0 \
-  --device /dev/gpiomem \
-  --device /dev/i2c-1 \
-  --privileged \
-  --network host \
-  smartgarden
+docker run -d smartgarden
 ```
 
 > 📌 Забележка: Raspberry Pi 5 **не поддържа RPi.GPIO**, затова проектът използва **Adafruit Blinka** и **libgpiod** за достъп до GPIO.
